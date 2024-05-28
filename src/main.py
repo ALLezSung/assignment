@@ -11,7 +11,10 @@ op_PATH = conf.op_PATH
 model = code01.Model(raw_PATH)
 
 #第一部分代码
-result = model.getFiles(model.getFolders())
-print(result)
+result01 = model.getFiles(model.getFolders())
 
 #第二部分代码
+Teams, Persons = code02.read_excel(result01)
+
+print(Teams)
+print(Persons)
