@@ -12,7 +12,7 @@ class Model:
         getFolders(): 获取raw_info下的文件夹列表
         getFiles(folders): 获取文件夹列表中，每个文件夹下各个文件的文件名
     '''
-    tgPATH = ''
+    tgPATH = r'raw_info'
 
     def __init__(self, PATH):
         self.tgPATH = PATH
@@ -26,6 +26,7 @@ class Model:
 
     def getFiles(self, folders):
         
+        folders = folders
         #对folders进行修正
         if type(folders) != list:
             if type(folders) == str:
@@ -38,6 +39,7 @@ class Model:
         for _ in folders:
             _files = os.listdir(self.tgPATH + '/' + _)
             files = [f for f in _files if f.endswith(limited_suffixs)]
+            files = [os.path.join(self.tgPATH, _, f) for f in files]
             namesDict[_] = files
 
         return namesDict

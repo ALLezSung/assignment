@@ -1,5 +1,6 @@
 import conf
 import code01
+import code02
 
 
 #从配置文件中读取路径
@@ -10,6 +11,7 @@ op_PATH = conf.op_PATH
 model = code01.Model(raw_PATH)
 
 #第一部分代码
-a = model.getFolders()
-result = model.getFiles(a)
+result = model.getFiles(model.getFolders())
 print(result)
+
+#第二部分代码
