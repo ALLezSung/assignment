@@ -20,11 +20,10 @@
 
 - ✔第一部分：输出一个字典，字典的key为学院名称；value为一个列表，包含隶属于该学院下的各个队伍的xlsx文件的路径。
   - {'土木工程学院': ['raw_info\\土木工程学院\\zzz队.xlsx'], 
-
-
-​			'湘雅医学院': ['raw_info\\湘雅医学院\\ggg队.xlsx'], 
-
-​			'计算机学院': ['raw_info\\计算机学院\\xxx队.xlsx', 'raw_info\\计算机学院\\yyy队.xlsx']}
+  
+    '湘雅医学院': ['raw_info\\湘雅医学院\\ggg队.xlsx'], 
+  
+    '计算机学院': ['raw_info\\计算机学院\\xxx队.xlsx', 'raw_info\\计算机学院\\yyy队.xlsx']}
 
 - ✔第二部分：输出两个列表（Teams和Persons），两个列表元素均为字典。
 
