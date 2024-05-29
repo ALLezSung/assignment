@@ -17,14 +17,29 @@ class Model:
     def __init__(self, PATH):
         self.tgPATH = PATH
 
-    def getFolders(self):
+    def getFolders(self) -> list:
+        '''
+        获取目标路径下的文件列表
+
+        返回：
+            dirlist: 文件列表
+        '''
         try:
             dirlist = os.listdir(self.tgPATH)
             return dirlist
         except:
             raise ValueError('请检查文件夹路径是否正确')
 
-    def getFiles(self, folders):
+    def getFiles(self, folders: str | list) -> dict:
+        '''
+        获取文件夹列表中，每个文件夹下各个文件的文件路径
+
+        参数：
+            folders: 文件夹列表
+
+        返回：
+            namesDict: 字典，键为文件夹名，值为该文件夹下各个文件的文件路径
+        '''
         
         folders = folders
         #对folders进行修正

@@ -2,7 +2,7 @@ import conf
 import code01
 import code02
 import code03
-from code03 import write_teams_to_csv, write_members_to_csv 
+
 
 #从配置文件中读取路径
 raw_PATH = conf.raw_PATH
@@ -15,9 +15,8 @@ model = code01.Model(raw_PATH)
 result01 = model.getFiles(model.getFolders())
 
 #第二部分代码
-Teams, Persons = code02.read_excel(result01)
-
+Teams, Persons = code02.readExcel(result01)
 
 #第三部分代码
-write_teams_to_csv(Teams)  
-write_members_to_csv(Persons)
+code03.writeCsv(op_PATH, Teams = Teams, Members = Persons)
+

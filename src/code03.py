@@ -1,19 +1,26 @@
-import csv  
-  
-def write_teams_to_csv(teams, filename='output\Teams.csv'):  
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:  
-        fieldnames = ['队伍名称', '队长姓名', '队长电话']  
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)  
-  
-        writer.writeheader()  
-        for team in teams:  
-            writer.writerow(team)  
-  
-def write_members_to_csv(members, filename='output\Members.csv'):  
-    with open(filename, 'w', newline='', encoding='utf-8') as csvfile:  
-        fieldnames = ['姓名', '身份', '电话', '学号']  
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)  
-  
-        writer.writeheader()  
-        for member in members:  
-            writer.writerow(member)
+import csv
+
+
+def writeCsv(path: str, **contents: dict) -> None:
+    '''
+    将字典列表写入csv文件
+
+    参数：
+    path: 文件路径
+    contents: 字典列表，字典的键为csv文件名，字典的值为字典列表
+
+    返回：
+    无
+    '''
+
+    for key, content in contents.items():
+        op_path = path + '/' + key + '.csv' #将key作为csv的文件名
+        with open(op_path, 'w', newline='') as csvfile:
+            writer = csv.DictWriter(csvfile, fieldnames=content[0].keys())
+            writer.writeheader()
+            writer.writerows(content)
+
+        print(f'{key}写入成功')
+
+    return None
+

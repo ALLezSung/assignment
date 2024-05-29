@@ -1,7 +1,7 @@
 import openpyxl
 
 
-def read_excel_team(file_path):
+def read_excel_team(file_path: str) -> dict:
     '''
     读取xlsx文件，获取队伍信息
 
@@ -23,7 +23,7 @@ def read_excel_team(file_path):
 
     return teamData
 
-def read_excel_person(file_path):
+def read_excel_person(file_path: str) -> list:
     '''
     读取xlsx文件，获取成员信息
 
@@ -64,12 +64,12 @@ def read_excel_person(file_path):
     person["姓名"] = sh['F2'].value
     person["身份"] = "指导老师"
     person["电话"] = sh['H2'].value
-    person["学号"] = None
+    person["学号"] = None #指导老师没有学号
     persons.append(person)
 
     return persons
 
-def read_excel(dict):
+def readExcel(dict: dict) -> list:
     '''
     由两个子函数构成：read_excel_team() 和 read_excel_person()
 
@@ -95,7 +95,7 @@ def read_excel(dict):
 if __name__ == "__main__":
     result01 = {'123':["raw_info\\土木工程学院\\zzz队.xlsx"]}
 
-    Teams, Persons = read_excel(result01)
+    Teams, Persons = readExcel(result01)
 
     print(Teams)
     print(Persons)
