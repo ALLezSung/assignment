@@ -14,7 +14,7 @@ def writeCsv(path: str, **contents: dict) -> None:
     '''
 
     for key, content in contents.items():
-        op_path = path + '/' + key + '.csv'
+        op_path = path + '/' + key + '.csv' #将key作为csv的文件名
         with open(op_path, 'w', newline='') as csvfile:
             writer = csv.DictWriter(csvfile, fieldnames=content[0].keys())
             writer.writeheader()
@@ -23,3 +23,4 @@ def writeCsv(path: str, **contents: dict) -> None:
         print(f'{key}写入成功')
 
     return None
+
