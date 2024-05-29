@@ -11,7 +11,7 @@
 - raw_info-原始数据文件夹
 - output-输出文件夹
 - src-代码文件夹
-  - conf储存常用变量
+  - config储存常用变量
   - main为程序入口
 
 
