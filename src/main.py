@@ -2,7 +2,7 @@ import conf
 import code01
 import code02
 import code03
-from code03 import write_teams_to_csv, write_members_to_csv 
+
 
 #从配置文件中读取路径
 raw_PATH = conf.raw_PATH
